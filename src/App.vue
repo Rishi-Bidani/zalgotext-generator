@@ -50,7 +50,7 @@ function showOutput(inp: string, crazy: number) {
         finalString += generateDiacritics(char, crazy);
     }
     // make it render the html
-    output.value = finalString.replace(/\\u([a-f0-9]{4})/gi, (n, hex) => {
+    output.value = finalString.replace(/\\u([a-f0-9]{4})/gi, (_n, hex) => {
         return String.fromCharCode(parseInt(hex, 16));
     });
 }
