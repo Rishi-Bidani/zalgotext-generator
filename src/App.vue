@@ -90,6 +90,13 @@ body {
     flex-direction: column;
     margin-inline: auto;
     max-width: 80rem;
+    padding-inline: 1rem;
+}
+
+@media screen and (min-width: 400px) {
+    #app {
+        padding-inline: 0.5rem;
+    }
 }
 
 h1 {
@@ -97,15 +104,15 @@ h1 {
 }
 
 main {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
 }
 
 main textarea,
 main .container {
     flex: 1;
-    min-width: 250px;
+    min-width: min(250px, 100%);
     font-size: 1.5rem;
     /* height: 15rem; */
     height: auto;
@@ -136,6 +143,7 @@ textarea {
 .output {
     border: 1px solid black;
     min-width: 250px;
+    min-height: 100px;
     padding: 1em;
     font-size: 1.5rem;
     height: 100%;
